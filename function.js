@@ -21,6 +21,13 @@ const resetTable = () => {
     table.push(Array(n).fill(-1));
   }
 
+  let templateCollumns = "";
+
+  for (let i = 0; i < n; i++) {
+    templateCollumns += "auto ";
+  }
+
+  tableTicTac.style.gridTemplateColumns = templateCollumns;
   tableTicTac.innerHTML = "";
   table.map((row, rowIndex) => {
     row.map((col, colIndex) => {
@@ -33,6 +40,17 @@ const resetTable = () => {
       tableTicTac.appendChild(clone);
     });
   });
+};
+
+const getTeamNameByValue = (value) => {
+  switch (value) {
+    case Team.A.value:
+      return Team.A.name;
+    case Team.B.value:
+      return Team.B.name;
+    default:
+      return "";
+  }
 };
 
 let count = 0;
@@ -120,17 +138,6 @@ const checkSideReverse = (teamValue) => {
   return true;
 };
 
-const checkComplete = () => {
-  return count === n * n;
-};
-
-const checkForDraw = () => {
-  if (checkComplete()) {
-    alert("Hòa!");
-    winTxt.innerHTML = `KẾT QUẢ HÒA`;
-  }
-};
-
 const checkForWin = (teamValue, position) => {
   if (
     checkHorizon(teamValue, position) ||
@@ -146,14 +153,14 @@ const checkForWin = (teamValue, position) => {
   }
 };
 
-const getTeamNameByValue = (value) => {
-  switch (value) {
-    case Team.A.value:
-      return Team.A.name;
-    case Team.B.value:
-      return Team.B.name;
-    default:
-      return "";
+const checkComplete = () => {
+  return count === n * n;
+};
+
+const checkForDraw = () => {
+  if (checkComplete()) {
+    alert("Hòa!");
+    winTxt.innerHTML = `KẾT QUẢ HÒA`;
   }
 };
 
