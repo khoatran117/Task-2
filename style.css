@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: snow;
+}
+
+
+#table {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5;
+    width: fit-content;
+}
+
+#card {
+    border: 1px solid black;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#label-container {
+    display: flex;
+    gap: 40px
+}
+
+#reset-btn {
+    margin-top: 10;
+    cursor: pointer;
+    padding: 10 20;
+    background-color: cadetblue;
+    width: fit-content;
+    color:white
+}
+
+.table-header {
+    font-weight: 600;
+    font-size: 25;
+    margin-bottom: 20;
+    color: green;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 3;
+    margin-top: 10;
+    align-items: center;
+}
+
+.label-name {
+    font-weight: 600;
+    font-size: 20;
+}
+
+.label-icon {
+    font-size: 35;
+    font-weight: 600;
+}
+
+.teamA {
+    color: yellowgreen;
+}
+
+.teamB {
+    color: red;
+}
